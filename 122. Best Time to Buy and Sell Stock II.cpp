@@ -6,7 +6,7 @@ public:
             if(prices[i]<min){
                 min=prices[i];
             }
-            temp=prices[i]-min;
+            temp=prices[i]-min; // if the stock is sold on that day itself then the profit is calculated using temp
             if(temp>0){
                 totalpr=totalpr+temp;
                 min=prices[i];
