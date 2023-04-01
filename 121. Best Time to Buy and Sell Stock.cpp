@@ -8,7 +8,7 @@ public:
             if(prices[i]<min){
                 min=prices[i];
             }
-            temp=prices[i]-min;
+            temp=prices[i]-min; // ussi din (ith) beechne ke liye
             if(profit<temp){
                 profit=temp;
             }
