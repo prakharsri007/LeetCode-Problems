@@ -47,7 +47,9 @@ public:
         }
 
         //recursion baki ka karr dega
+       if(forward!=NULL){
         head->next=reverseKGroup(forward,k);
+        }
         
 
         //return
