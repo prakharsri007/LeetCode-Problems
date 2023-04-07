@@ -33,7 +33,7 @@ public:
         //basically check karre hain ki can we go till the last element , like [remaining elements>k] in the linked list 
         int x = k;
         ListNode* p = head;
-        while(x>0&&p){
+        while(p!=NULL && x>0){
             p = p->next;
             x--;
         }
