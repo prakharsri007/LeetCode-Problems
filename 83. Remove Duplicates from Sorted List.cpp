@@ -13,12 +13,15 @@ public:
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode* curr=head;
         while(curr!=NULL){
-            if(curr->next!=NULL && curr->val == curr->next->val){ // ek baar curr ka next bhi check karr 
-                                                                  //lo ki if it going to be NULL?          
-                curr->next=curr->next->next;
+            if(curr->next!=NULL && curr->val==curr->next->val){
+                ListNode* next_next=curr->next->next;
+                ListNode* todelete=curr->next; //middle note jo delete karna hai
+                delete(todelete);
+                curr->next=next_next;
             }
-            else
-            curr=curr->next;
+            else{
+                curr=curr->next;
+            }
         }
         return head;
     }
