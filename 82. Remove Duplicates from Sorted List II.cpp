@@ -8,6 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+//proper code and explanation in copy
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
