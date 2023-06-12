@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
+        //corner test cases ke liye
         if(nums[0]==0 && nums.size()==1){
             return 0;
         }
@@ -14,6 +15,8 @@ public:
         
         
         int prod=1;
+        //use 2 for loops from both the ends and get the maximum possible 
+        //product
         for(int i=0;i<nums.size();i++){
             
             prod=prod*nums[i];
