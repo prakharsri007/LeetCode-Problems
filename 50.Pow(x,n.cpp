@@ -35,3 +35,27 @@ public:
 }  
     
 };
+
+//RECURSSIVE SOLUTION
+/*
+class Solution {
+public:
+    double myPow(double x, int n) {
+        //base case
+        if(n==0) return 1;
+        if(n==1) return x;
+
+        //recurssive call
+        double ans=myPow(x,n/2);
+
+        //b is even OR odd check
+        if(n%2==0){
+            return ans*ans;  //b is EVEN
+        }
+        else{
+            return x*ans*ans;//B is ODD
+        }
+        
+    }
+}; 
+*/
