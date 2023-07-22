@@ -17,3 +17,30 @@ public:
         
     }
 };
+
+//HASMAP APPROACH
+/*
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map <int,int> map;
+        //updating the frequency in the map
+        for(int i=0;i<nums.size();i++){
+            map[nums[i]]++;
+        }
+        //iterating to find the one with max frequency
+        int maxfreq=-1;
+        int max;
+        for(auto i:map){
+            if(i.second>maxfreq){
+                maxfreq=i.second;
+                max=i.first;
+            }
+        }
+        return max;
+
+
+        
+    }
+};
+*/
