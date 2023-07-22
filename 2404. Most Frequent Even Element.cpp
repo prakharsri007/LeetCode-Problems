@@ -13,7 +13,8 @@ public:
             if(i.second>maxfreq && i.first%2==0 ){//max update condition
                 maxfreq=i.second;
                 max=i.first;
-            }           
+            }
+            
         }
         return max;
         
