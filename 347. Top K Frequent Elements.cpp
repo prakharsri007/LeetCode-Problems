@@ -16,7 +16,7 @@ public:
                 }
             }
             top.push_back(maxe);
-            m.erase(maxe);
+            m.erase(maxe); //or we can change the frequency as well ---->m[maxe]=0;
             maxe=-1;
             maxf=-1;
         }
