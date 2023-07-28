@@ -41,3 +41,25 @@ public:
         return ans;
     }
 };
+
+//OPTIMAL SOLUTION O(n)
+
+class Solution {
+private:
+    int height(TreeNode* root,int& diameter){
+        if(root==NULL) return 0;
+
+        int lh=height(root->left,diameter);
+        int rh=height(root->right,diameter);
+        //check max sum of lh+rh for each node
+        diameter=max(diameter,(lh+rh));
+        //normal return for max height
+        return 1+max(lh,rh);
+    }
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
+        int diameter=0;
+        height(root,diameter);
+        return diameter;
+    }
+};
