@@ -9,7 +9,7 @@ public:
                     return true;
                 }
             }
-            //agar pehle nahi occur kiya hai tab uski position store karr do
+            //agar pehle nahi occur kiya hai tab uski position store karr do ya phir agar condition satisfy nahi hui toh position bhi update karr do
             m[nums[i]]=i;
         }
         //agar pura for loop run hua and abs condition satisfy nahi hui then return false
