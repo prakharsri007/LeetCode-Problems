@@ -1,28 +1,32 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        int x=s.length();
         vector<string> words;
-        string onew="";
-        for(int i=0;i<x;i++){
-            if(s[i]==' '){
-                words.push_back(onew);
-                onew=" ";
+        string word="";
+        for(int i=0;i<s.size();i++){
+            if(s[i]==' ' && word==""){//ye words ke  beech mei extra spaces naa aaye vector mei iss liye
+                continue;
+            }
+            else if(s[i]==' ' && word!=""){
+                words.push_back(word);
+                word="";
+                continue;
             }
             else{
-                onew=onew+s[i];
+                word=word+s[i];
+            }
+            if(i==s.size()-1){
+                words.push_back(word);
             }
         }
-            words.push_back(onew); // for the last word becuase after that no space
-            
-            string f="";
-            for(int j=words.size()-1;j>0;j--){
-                f=f+words[j];
-            }f=f+" "+words[0];
-        f.erase(0,1);
-        return f;
-
-            
+        string ans;
+        for(int i=words.size()-1;i>=0;i--){
+            if(words[i]!="  "){
+                ans.append(words[i]);
+                if(i!=0)
+                ans.append(" ");
+            }
+        }
+        return ans;
     }
-    
 };
