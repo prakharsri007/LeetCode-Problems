@@ -1,21 +1,31 @@
 class Solution {
-public:
+public://two pointer approach
     bool isPalindrome(string s) {
-        string str="";
-        for(int i=0;i<s.length();i++){
-            if(isalpha(s[i]) || isdigit(s[i])){
-                char ch=tolower(s[i]);
-                str=str+ch;
+        int i=0;
+        int j=s.size()-1;
+
+        while(i<=j){
+            if(!isalpha(s[i]) && !isdigit(s[i])){
+                i++;
+                continue;
+            }
+            if(!isalpha(s[j]) && !isdigit(s[j])){
+                j--;
+                continue;
+            }
+            if(tolower(s[i]) != tolower(s[j])){
+                return false;
+            }
+            else{
+                i++;
+                j--;
             }
         }
-        string temp=str;
-        reverse(str.begin(),str.end());
-        if(str==temp){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return true;
+
+        
+
+        
         
     }
 };
