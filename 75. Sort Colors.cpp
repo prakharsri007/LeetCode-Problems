@@ -1,4 +1,30 @@
-//BUBBLE SORT SOLUTION
+//Most Optimal 3 Pointerr Approach
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int i=0;//start pointer zero wala
+        int j=nums.size()-1;//end pointer two wala
+        int x=0;//midlle pointer
+        while(x<=j){
+            if(nums[x]==0){
+                swap(nums[i],nums[x]);
+                i++;
+                x++;
+            }
+            else if(nums[x]==1){
+                x++;
+            }
+            else if(nums[x]==2){
+                swap(nums[x],nums[j]);
+                j--;
+            }
+        }
+    }
+};
+
+
+
+/*/BUBBLE SORT SOLUTION
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
@@ -47,3 +73,5 @@ public:
     }
 };
 */
+
+
