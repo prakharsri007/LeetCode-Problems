@@ -13,7 +13,7 @@ private:
         if (i >= m || j >= n) {
             return 0; // out of bounds bc
         }
-        if(dpHashTable[i][j]!=-1) {
+        if(dpHashTable[i][j]!=-1) {//hashtable stores the value of paths so that we dont have to calculate same path again
             return dpHashTable[i][j];
         }
         else {
