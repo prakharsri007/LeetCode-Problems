@@ -1,3 +1,34 @@
+/*
+Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+*/
+
+//BRUTE FORCE
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int r=k%nums.size();
+
+        vector<int> temps;
+        for(int i=nums.size()-r;i<nums.size();i++){
+            temps.push_back(nums[i]);
+        }
+        for(int i=nums.size()-r-1;i>=0;i--){
+            nums[i+r]=nums[i];
+        }
+        int j=0;
+        for(int i=0;i<r;i++){
+            nums[i]=temps[i];
+        }
+        
+    }
+};
+
+//OPTIMAL
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
